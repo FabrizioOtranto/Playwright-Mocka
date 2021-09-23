@@ -1,0 +1,35 @@
+[
+    {
+    "gender": 0,
+    "firstname": "Fabrizio",
+    "lastname": "Otranto",
+    "birthDay": "31",
+    "birthMonth": "October",
+    "birthYear": "1995",
+    "email": "testing",
+    "password": "testing"
+},
+
+{
+    "gender": 0,
+    "firstname": "Agustin",
+    "lastname": "Salgado",
+    "birthDay": "10",
+    "birthMonth": "May",
+    "birthYear": "1980",
+    "email": "tester",
+    "password": "testing"
+},
+
+{
+    "gender": 1,
+    "firstname": "Luciana",
+    "lastname": "Algisi",
+    "birthDay": "1",
+    "birthMonth": "February",
+    "birthYear": "1998",
+    "email": "testing123",
+    "password": "testing"
+}
+
+]

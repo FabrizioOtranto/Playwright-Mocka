@@ -1,0 +1,19 @@
+[
+{
+    "processor": "2.2 GHz Intel Pentium Dual-Core E2200",
+    "ram": "2 GB",
+    "OS": 0,
+    "disk": 1,
+    "quantity": "2",
+    "options": true
+},
+{
+    "processor": "2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]",
+    "ram": "8GB [+$60.00]",
+    "OS": 1,
+    "disk": 0,
+    "quantity": "4",
+    "options": false
+}
+
+]
