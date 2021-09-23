@@ -7,7 +7,7 @@ const chai = require ('chai')
 const expect = chai.expect
 
 
-describe('Commerce demo page', () => {
+describe('Ecommerce Build Computer process test', () => {
     let browser = null;
     let context = null;
     let page = null;
@@ -53,13 +53,10 @@ describe('Commerce demo page', () => {
        await buildComputerPage.selectTotalCommander()
     }
        await buildComputerPage.selectQuantity(dataSet[0].quantity)
-       await page.waitForTimeout(6000)
-       const text = await page.textContent("#price-value-1")
-       expect(await text).to.be.equals('$1,365.00');
-       await eyes.check(Target.window().fully())
        await buildComputerPage.clickAddTocar()
+       await eyes.check("Before add to car first time",Target.window().fully())
        await homePage.clickShopingCartLink()
-      await eyes.check(Target.window().fully())
+      await eyes.check("After add to car first time", Target.window().fully())
     })
 
     it("Should be able to add to car a computer with second data", async () =>{
@@ -71,12 +68,12 @@ describe('Commerce demo page', () => {
      if(dataSet[1].options == false ){
         await buildComputerPage.selectTotalCommander()
      }
-        await buildComputerPage.selectQuantity(dataSet[1].quantity)
 
-        await eyes.check(Target.window().fully())
+        await buildComputerPage.selectQuantity(dataSet[1].quantity)
         await buildComputerPage.clickAddTocar()
+        await eyes.check("Before add to car second time",Target.window().fully())
         await homePage.clickShopingCartLink()
-        await eyes.check(Target.window().fully())
+        await eyes.check("After add to car second time",Target.window().fully())
      })
 })
     

@@ -4,7 +4,7 @@ const {ClassicRunner, Eyes, Target, RectangleSize} = require("@applitools/eyes-p
 const dataSet = require("../data/login.json")
 
 
-describe('Commerce demo page', () => {
+describe('Ecomerce Login Process test', () => {
     let browser = null;
     let context = null;
     let page = null;
@@ -43,13 +43,13 @@ describe('Commerce demo page', () => {
         await loginPage.setPassword(data.password)
         if((chance <= 0.33 && !picture1) || (!picture1 && i == dataSet.length -1)){
         
-            await eyes.check(Target.window().fully())
+            await eyes.check("Before login valid credentials",Target.window().fully())
                 picture1 = true
             }
         await loginPage.clickLoginBtn()
 
         if((chance <= 0.33 && !picture2) || (!picture2 && i == dataSet.length -1)){
-            await eyes.check(Target.window().fully())
+            await eyes.check("after login valid credentials",Target.window().fully())
             picture2 = true
         }
         i++
@@ -62,7 +62,7 @@ describe('Commerce demo page', () => {
         await loginPage.setEmail("wrongEmail@gmail.com")
         await loginPage.setPassword(dataSet[0].password)
         await loginPage.clickLoginBtn()
-        await eyes.check(Target.window().fully())
+        await eyes.check("invalid email",Target.window().fully())
 
     })
 
@@ -70,7 +70,7 @@ describe('Commerce demo page', () => {
         await loginPage.setEmail(dataSet[0].email)
         await loginPage.setPassword('worngPassword')
         await loginPage.clickLoginBtn()
-        await eyes.check(Target.window().fully())
+        await eyes.check("invalid password",Target.window().fully())
 
     })
 
@@ -79,7 +79,7 @@ describe('Commerce demo page', () => {
         await loginPage.clickForgotPasswordBtn()
         await loginPage.setEmail(dataSet[0].email)
         await loginPage.clickRecoverBtn()
-        await eyes.check(Target.window().fully())
+        await eyes.check("recover valid credentials",Target.window().fully())
 
     })
 
@@ -87,7 +87,7 @@ describe('Commerce demo page', () => {
         await loginPage.clickForgotPasswordBtn()
         await loginPage.setEmail("wrongEmail@gmail.com")
         await loginPage.clickRecoverBtn()
-        await eyes.check(Target.window().fully())
+        await eyes.check("recover invalid credentials",Target.window().fully())
 
     })
 

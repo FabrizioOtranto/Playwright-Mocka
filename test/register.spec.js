@@ -4,7 +4,7 @@ const {ClassicRunner, Eyes, Target, RectangleSize} = require("@applitools/eyes-p
 const dataSet = require("../data/register.json")
 
 
-describe('Commerce demo page', () => {
+describe('ECommerce register process test', () => {
     
     let browser = null;
     let context = null;
@@ -61,13 +61,13 @@ describe('Commerce demo page', () => {
         await registerPage.setConfirmPassword(data.password)
        if((chance <= 0.33 && !picture1) || (!picture1 && i == dataSet.length -1)){
         
-        await eyes.check(Target.window().fully())
+        await eyes.check("Before registration valid credentials",Target.window().fully())
             picture1 = true
         }
         await registerPage.clickRegisterBtn()
 
         if((chance <= 0.33 && !picture2) || (!picture2 && i == dataSet.length -1)){
-            await eyes.check(Target.window().fully())
+            await eyes.check("After registration valid credentials",Target.window().fully())
             picture2 = true
         }
         i++
